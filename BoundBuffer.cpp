@@ -7,7 +7,6 @@ template <typename T>
 BoundBuffer<T>::BoundBuffer(size_t capacity) : capacity(capacity), front(0), rear(0), count(0) {
     buffer.resize(capacity);
 }
-
 /**
  * @brief Puts an item into the buffer.
  *
