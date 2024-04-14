@@ -11,7 +11,7 @@ class Stage {
 public:
     virtual void read(BoundBuffer<T> buffer) = 0;
     virtual void work() = 0;
-    virtual void output(BoundBuffer<T>* buffer) = 0;
+    virtual void output(BoundBuffer<T> buffer) = 0;
 
     virtual ~Stage() {}
 };
@@ -21,7 +21,7 @@ class findFile : public Stage<T> {
 private:
 
 public:
-    void read(BoundBuffer<T> readBuffer) override {
+    void read(BoundBuffer<T> &readBuffer) override {
 
     }
 
@@ -29,7 +29,7 @@ public:
 
     }
 
-    void output(BoundBuffer<T>* writeBuffer) {
+    void output(BoundBuffer<T> &writeBuffer) {
 
     }
 };
@@ -39,7 +39,7 @@ class filterFile : public Stage<T> {
 private:
 
 public:
-    void read(BoundBuffer<T> readBuffer) override {
+    void read(BoundBuffer<T> &readBuffer) override {
 
     }
 
@@ -47,7 +47,7 @@ public:
 
     }
 
-    void output(BoundBuffer<T>* writeBuffer) {
+    void output(BoundBuffer<T> &writeBuffer) {
 
     }
 };
@@ -57,7 +57,7 @@ class generateLine : public Stage<T> {
 private:
 
 public:
-    void read(BoundBuffer<T> readBuffer) override {
+    void read(BoundBuffer<T> &readBuffer) override {
 
     }
 
@@ -65,7 +65,7 @@ public:
 
     }
 
-    void output(BoundBuffer<T>* writeBuffer) {
+    void output(BoundBuffer<T> &writeBuffer) {
 
     }
 };
@@ -75,7 +75,7 @@ class filterLine : public Stage<T> {
 private:
 
 public:
-    void read(BoundBuffer<T> readBuffer) override {
+    void read(BoundBuffer<T> &readBuffer) override {
 
     }
 
@@ -83,7 +83,7 @@ public:
 
     }
 
-    void output(BoundBuffer<T>* writeBuffer) {
+    void output(BoundBuffer<T> &writeBuffer) {
 
     }
 };
